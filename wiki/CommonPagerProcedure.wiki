@@ -2,6 +2,7 @@
 -- Create date: 2007-5-11
 -- Description: SQL 2005 版本 通用分页存储过程
 -- =============================================
+<br/>
 Create PROCEDURE [dbo].[Pagination]
 @Page int = 1,      -- 当前页码
 @PageSize int = 10,     -- 每页记录条数(页面大小)
