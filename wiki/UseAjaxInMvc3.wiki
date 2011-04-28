@@ -14,7 +14,7 @@ var px = function () {
             cl('mailform');
         },
         error: function (XmlHttpRequest, textStatus, errorThrown) {
-            // document.write(XmlHttpRequest.responseText);
+             document.write(XmlHttpRequest.responseText);
         }
     });
 }
