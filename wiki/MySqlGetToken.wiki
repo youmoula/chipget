@@ -2,5 +2,7 @@
 SELECT CASE `MANAGER_TOKEN` WHEN  NULL THEN 'token不存在'
                     WHEN   '' THEN 'token为空'
                     WHEN TIMESTAMPDIFF(MINUTE,FROM_UNIXTIME(SUBSTRING(`MANAGER_TOKENEXPIRED` FROM 1 FOR 10)),NOW())>1 THEN 'token 超时'
+                    WHEN   'token1'  THEN 1
+                    ELSE 0
     END AS TOKENINFO FROM MANAGER;
 }}}
