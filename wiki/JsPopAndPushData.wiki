@@ -62,6 +62,7 @@ var pushDataPlu=function(items,prefix){
 					$("ul#data_"+prefix).append(decodeURIComponent(items[key][e]));
 				}
 				$("ul#data_"+prefix).append("</li>");
+				return;
 			}
 		};
 		if(items[key].constructor==([]).constructor){
