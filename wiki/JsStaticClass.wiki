@@ -3,7 +3,7 @@
 
 = Static Class In Js =
 
-{{{
+<code language="html">
 <head>
 <script type="text/javascript" >
 
@@ -38,6 +38,6 @@
 	</script>
 
 </body>
-
+</html>
 
 }}}
