@@ -1,0 +1,31 @@
+#This is one demo code about using ajax in mvc3 views
+# add the right url is very important #
+```
+var px = function () {
+    var n = $('#txt_name').val();
+    var m = $('#txt_email').val();
+    var b = $('#txt_message').val();
+    $.ajax({
+        type: "POST",
+        url: "/EPL/Default/sendm",
+        data: "name=" + n + "&mail=" + m + "&body=" + b,
+        success: function (msg) {
+            alert(msg);
+            cl('mailform');
+        },
+        error: function (XmlHttpRequest, textStatus, errorThrown) {
+             document.write(XmlHttpRequest.responseText);
+        }
+    });
+}
+var cl = function (form1) {
+    $('#' + form1 + ">input").val("");
+    $('#' + form1 + ">textarea").val("");
+}
+```
+
+
+# Details #
+
+The error infomation is important too.When you url is error or data type is error,it can give you the extrict tips:
+  * Evan Micheal

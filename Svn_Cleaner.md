@@ -1,0 +1,46 @@
+@echo off
+
+if "%1"=="" (
+> goto error
+) else (
+> goto action %1
+)
+:error
+echo.
+echo 必须输入要操作的文件夹路径参数，或拖动文件夹到此命令文件上。
+<br />
+echo.
+<br />
+pause
+<br />
+goto end
+<br />
+:action %1
+<br />
+echo --------------------------------------------------------------------------
+<br />
+echo 本次操作将删除 [%1] 文件夹下所有的svn标记，请慎重操作！
+<br />
+echo     Y 清理文件夹
+<br />
+echo     N 退出
+<br />
+echo ---------------------------------------------------------------------------
+<br />
+choice /c YN /m 请选择菜单(按ctrl+c或N退出)：
+<br />
+if %errorlevel% equ 2 goto end
+<br />
+echo 正在清理文件夹：%1
+<br />
+echo 请稍候...
+<br />
+for /r "%1" %%a in (.) do @if exist "%%a\.svn" rd /s /q "%%a\.svn"
+<br />
+echo 清理完毕!
+<br />
+echo 按任意键退出...
+<br />
+pause>echo.
+:end
+exit
