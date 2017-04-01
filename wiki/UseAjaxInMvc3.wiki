@@ -1,6 +1,6 @@
 #This is one demo code about using ajax in mvc3 views
 = add the right url is very important =
-{{{
+=
 var px = function () {
     var n = $('#txt_name').val();
     var m = $('#txt_email').val();
@@ -22,7 +22,7 @@ var cl = function (form1) {
     $('#' + form1 + ">input").val("");
     $('#' + form1 + ">textarea").val("");
 }
-}}}
+=
 
 
 = Details =
