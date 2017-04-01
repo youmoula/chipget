@@ -61,13 +61,13 @@
   -- 执行SQL, 取最大页码
   Execute sp_executesql @SQL, N'@Rows int output', @TotalRow output;
   Set @MaxPage = (CASE WHEN (@TotalRow % @PageSize)<>0 THEN (@TotalRow / @PageSize + 1) ELSE (@TotalRow / @PageSize) END);
-End Try
-Begin Catch
-  -- 捕捉错误
-  Set @MaxPage = -1;
-  Set @Descript = 'error line: ' + CAST(ERROR_LINE() AS varchar(8)) + ', error number: ' + CAST(ERROR_NUMBER() AS varchar(8)) + ', error message: ' + ERROR_MESSAGE();
+  End Try
+  Begin Catch
+    -- 捕捉错误
+    Set @MaxPage = -1;
+    Set @Descript = 'error line: ' + CAST(ERROR_LINE() AS varchar(8)) + ', error number: ' + CAST(ERROR_NUMBER() AS varchar(8)) + ', error message: ' + ERROR_MESSAGE();
+    Return;
+  End Catch;
+  -- 执行成功
   Return;
-End Catch;
--- 执行成功
-Return;
-END
+  END
