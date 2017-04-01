@@ -18,7 +18,6 @@
              document.write(XmlHttpRequest.responseText);
         }
     });
-}
 var cl = function (form1) {
     $('#' + form1 + ">input").val("");
     $('#' + form1 + ">textarea").val("");
